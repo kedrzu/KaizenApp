@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Webpack;
 
-namespace Kaizen
+namespace Aurelia.Skeleton.AspNetCore
 {
     public class Startup
     {
@@ -16,6 +17,8 @@ namespace Kaizen
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddWebpack();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,11 +30,10 @@ namespace Kaizen
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseMvc();
+            //app.UseWebpack("webpack.config.js", "wwwroot/dist/bundle.js", new WebpackDevServerOptions("localhost", 8080));
         }
     }
 }
