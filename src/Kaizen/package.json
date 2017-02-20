@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@types/whatwg-fetch": "0.0.32",
     "aurelia-bootstrapper-webpack": "^1.1.0",
     "aurelia-event-aggregator": "^1.0.1",
     "aurelia-framework": "^1.0.8",
@@ -15,13 +14,16 @@
     "aurelia-templating-resources": "^1.2.0",
     "aurelia-templating-router": "^1.0.1",
     "bluebird": "^3.4.6",
-    "jquery": "^3.1.1"
+    "d3": "^4.6.0",
+    "jquery": "^3.1.1",
+    "moment": "^2.17.1"
   },
   "devDependencies": {
+    "@types/d3": "^4.5.0",
+    "@types/moment": "^2.13.0",
+    "@types/whatwg-fetch": "0.0.32",
     "@types/bluebird": "^3.0.35",
     "@types/jquery": "^2.0.40",
-    "@types/webpack": "^2.0.0",
-    "@types/whatwg-fetch": "^0.0.32",
     "aurelia-webpack-plugin": "^1.2.1",
     "aurelia-loader-webpack": "^2.0.0",
     "html-loader": "^0.4.4",

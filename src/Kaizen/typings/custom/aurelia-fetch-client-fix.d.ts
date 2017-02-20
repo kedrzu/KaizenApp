@@ -1,4 +1,4 @@
-﻿declare class URLSearchParams {
+﻿interface URLSearchParams {
     /** Constructor returning a URLSearchParams object. */
     constructor(init?: string| URLSearchParams);
 
@@ -33,5 +33,5 @@
     values(): IterableIterator<string>;
 
      /** Iterator */
-    [Symbol.iterator](): IterableIterator<number>;
+    //[Symbol.iterator](): IterableIterator<number>;
 }

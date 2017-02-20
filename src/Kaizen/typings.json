@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "",
   "dependencies": {
     "aurelia-binding": "github:aurelia/binding",
@@ -24,5 +24,8 @@
     "aurelia-templating-binding": "github:aurelia/templating-binding",
     "aurelia-templating-resources": "github:aurelia/templating-resources",
     "aurelia-templating-router": "github:aurelia/templating-router"
+  },
+  "globalDependencies": {
+    "moment": "registry:dt/moment#2.11.1+20161010105546"
   }
 }

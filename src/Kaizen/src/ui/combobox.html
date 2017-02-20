@@ -1,0 +1,8 @@
+﻿<template class="ui selection dropdown" ref="combo">
+    <input type="hidden" name="gender" value.bind="value">
+    <i class="dropdown icon"></i>
+    <div class="default text">Gender</div>
+    <div class="menu">
+        <div class="item" repeat.for="item of items" data-value.bind="item.value">${item.name}</div>
+    </div>
+</template>

@@ -5,7 +5,19 @@
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
+    "experimentalDecorators": true,
     "sourceMap": false,
-    "target": "es6"
-  }
+    "moduleResolution": "node",
+    "target": "es6",
+    "typeRoots": [
+      "./src/models",
+      "./typings/custom",
+      "./typings/globals",
+      "./typings/@types",
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
