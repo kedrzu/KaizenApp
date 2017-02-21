@@ -1,0 +1,7 @@
+
+# we do not need compiled js files
+src/**/*.js
+src/**/*.js.map
+
+# we do not need compiled bundles
+wwwroot

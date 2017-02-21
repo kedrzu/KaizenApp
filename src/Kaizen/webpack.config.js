@@ -14,8 +14,8 @@ module.exports = {
     },
     output: {
         path: path.resolve('wwwroot'),
-        filename: 'dist/bundle.js',
-        sourceMapFilename: 'dist/bundle.js.map'
+        filename: 'bundle.js',
+        sourceMapFilename: 'bundle.js.map'
     },
     // Turn on sourcemaps
     devtool: 'source-map',

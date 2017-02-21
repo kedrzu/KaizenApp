@@ -43,12 +43,25 @@ export class TasksChart {
 
         svg.selectAll(".bar")
             .data(data)
-            .enter().append("rect")
+            .enter()
+            .append("rect")
             .attr("class", "bar")
             .attr("x", d => x(this.formatDate(d)))
             .attr("width", x.step())
             .attr("y", d => y(d.value))
+            .attr("title", d => d.value)  
             .attr("height", d => height - y(d.value));
+
+        select(this.chart)
+            .selectAll('div')
+            .data(data)
+            .enter()
+            .append("div")
+            .style('position', 'absolute')
+            .style('width', x.step() + 'px')
+            .style('text-align', 'center')
+            .style('left', d => `${x(this.formatDate(d))}px`)
+            .html(d => d.value.toString());
     }
 
     private formatDate(sample: ISample): string {
