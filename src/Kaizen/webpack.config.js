@@ -28,10 +28,23 @@ module.exports = {
     },
     module: {
         loaders: [
-
-            { test: /\.ts$/, loader: 'ts-loader' },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            },
             //This loader reads our html templates that are referenced and bundles them with our javascript.
-            { test: /\.html$/, loader: 'html-loader', exclude: path.resolve('Index.html') }
+            {
+                test: /\.html$/,
+                loader: 'html-loader',
+                exclude: path.resolve('Index.html')
+            },
+            {
+                test: /\.css/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader", options: { sourceMap: true } }
+                ]
+            }
         ]
     },
     plugins: [
@@ -56,4 +69,4 @@ module.exports = {
             }
         }
     }
-}
+};

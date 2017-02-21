@@ -9,7 +9,7 @@
     delete(name: string): void; 
 
     /** Returns an iterator allowing to go through all key/value pairs contained in this object. */
-    entries(): IterableIterator<[string, string]>;
+    //entries(): IterableIterator<[string, string]>;
 
     /** Returns the first value associated to the given search parameter. */
     get(name: string): string;
@@ -21,7 +21,7 @@
     has(name: string): boolean;
 
     /** Returns an iterator allowing to go through all keys of the key/value pairs contained in this object. */
-    keys(): IterableIterator<string>;
+    //keys(): IterableIterator<string>;
 
     /** Sets the value associated to a given search parameter to the given value. If there were several values, delete the others. */
     set(name: string, value: string): void;
@@ -30,7 +30,7 @@
     toString(): string;
 
     /** Returns an iterator allowing to go through all values of the key/ value pairs contained in this object. */
-    values(): IterableIterator<string>;
+   // values(): IterableIterator<string>;
 
      /** Iterator */
     //[Symbol.iterator](): IterableIterator<number>;
