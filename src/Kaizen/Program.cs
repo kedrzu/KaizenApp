@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Aurelia.Skeleton.AspNetCore
+namespace Kaizen
 {
     public class Program
     {
@@ -17,6 +14,8 @@ namespace Aurelia.Skeleton.AspNetCore
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
+
+            Process.Start("cmd.exe", "/C webpack --watch");
 
             host.Run();
         }

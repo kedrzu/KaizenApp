@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Webpack;
 
-namespace Aurelia.Skeleton.AspNetCore
+namespace Kaizen
 {
     public class Startup
     {
@@ -18,7 +12,6 @@ namespace Aurelia.Skeleton.AspNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddWebpack();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +26,6 @@ namespace Aurelia.Skeleton.AspNetCore
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
-            //app.UseWebpack("webpack.config.js", "wwwroot/dist/bundle.js", new WebpackDevServerOptions("localhost", 8080));
         }
     }
 }
