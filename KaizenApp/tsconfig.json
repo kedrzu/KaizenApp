@@ -1,0 +1,30 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "es2015",
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "target": "es6",
+    "typeRoots": [
+      "./src/definitions",
+      "./typings/@types",
+      "./node_modules/@types"
+    ],
+    "outDir": "js",
+    "baseUrl": ".",
+    "paths": {
+      "app/*": [ "src/Modules/*" ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "typings/globals/**/*"
+  ]
+}
+
+
