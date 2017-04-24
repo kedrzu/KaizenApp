@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "target": "es6",
     "typeRoots": [
-      "./src/definitions",
+      "./src/Definitions",
       "./typings/@types",
       "./node_modules/@types"
     ],

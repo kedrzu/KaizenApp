@@ -16,12 +16,17 @@
     "aurelia-templating-router": "^1.0.1",
     "aurelia-fetch-client": "^1.1.1",
     "bluebird": "^3.4.6",
+    "d3": "^4.6.0",
     "jquery": "^3.1.1",
+    "moment": "^2.17.1",
     "normalize-scss": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^6.0.48",
     "@types/webpack": "^2.0.0",
+    "@types/d3": "^4.5.0",
+    "@types/jquery": "^2.0.40",
+    "@types/moment": "^2.13.0",
     "aurelia-loader-webpack": "^2.0.0",
     "aurelia-webpack-plugin": "^1.2.1",
     "css-loader": "^0.26.1",
