@@ -37,4 +37,32 @@ export class WunderlistMetrics {
         });
     }
 
+    public async getBurndown(listIds : number[], from: moment.Moment, to: moment.Moment): Promise<common.Sample<number>[]> {
+        var data = await this.storage.getData();
+        var days = helpers.date.days(from, to);
+        
+        var samples = days.map<common.Sample<number>>(d => {
+            return {
+                timestamp: d,
+                value: 0
+            }
+        });
+
+        for (var list of data.lists.filter(l => listIds.some(id => id === l.id))) {
+            for (let task of list.pendingTasks) {
+                for (let sample of samples.filter(s => s.timestamp >= task.createdAt)) {
+                    sample.value++;
+                }
+            }
+
+            for (let task of list.completedTasks) {
+                for (let sample of samples.filter(s => s.timestamp <= task.completedAt)) {
+                    sample.value++;
+                }
+            }
+        }
+
+        return samples;
+    }
+
 }

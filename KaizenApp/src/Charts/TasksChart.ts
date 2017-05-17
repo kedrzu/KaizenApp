@@ -22,7 +22,8 @@ export class TasksChart {
         var to = moment();
         var from = to.clone().add(-10, "day");
 
-        this.samples = await this.metrics.getCompletedTasksPerDay(from, to);
+        //this.samples = await this.metrics.getCompletedTasksPerDay(from, to);
+        this.samples = await this.metrics.getBurndown([155141052, 302645324], from, to);
 
         this.renderChart();
         $(window).on('resize', () => this.renderChart());
