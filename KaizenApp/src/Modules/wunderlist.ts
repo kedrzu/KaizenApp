@@ -1,3 +1,3 @@
 ﻿
-export * from "./../Wunderlist/WunderlistDefinitions";
-export * from "./../Wunderlist/WunderlistClient";
+export * from "./../Wunderlist/WunderlistModels";
+export * from "./../Wunderlist/WunderlistMetrics";

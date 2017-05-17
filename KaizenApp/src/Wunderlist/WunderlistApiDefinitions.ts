@@ -1,19 +1,19 @@
-﻿export interface EntityBase {
+﻿export interface ApiEntityBase {
     id: number;
     type: "list" | "task";
     revision: number;
 }
 
-export interface Entity extends EntityBase {
+export interface ApiEntity extends ApiEntityBase {
     created_at: string;
     title: string;
 }
 
-export interface Root extends EntityBase {
+export interface ApiRoot extends ApiEntityBase {
     user_id: number;
 }
 
-export interface Task extends Entity {
+export interface ApiTask extends ApiEntity {
     created_by_id: number;
     created_by_request_id: string;
     completed: boolean;
@@ -24,7 +24,7 @@ export interface Task extends Entity {
     type: "task";
 }
 
-export interface TaskList extends Entity {
+export interface ApiTaskList extends ApiEntity {
     list_type: string;
     owner_id: string;
     owner_type: string;

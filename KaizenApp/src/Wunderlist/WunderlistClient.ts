@@ -1,11 +1,11 @@
 ﻿import { HttpClient } from 'aurelia-fetch-client';
 import { buildQueryString } from "aurelia-path";
-import * as defs from "./WunderlistDefinitions";
+import * as defs from "./WunderlistApiDefinitions";
 
 const localStorageKey = "Wunderlist-AccessToken";
 const clientId = "f0213e52799e3070a4ca";
 
-export class WunderlistApi {
+export class WunderlistClient {
 
     private accessTokenValue: string;
     private client: HttpClient;
@@ -33,7 +33,7 @@ export class WunderlistApi {
     }
 
     public get accessToken() {
-        return this.accessTokenValue;
+        return this.accessTokenValue || "057c10e2553f3e198fb53e6aeafb8dad63607bd2f70f4bf5c7355734414a";
     }
 
     public set accessToken(value: string) {
@@ -41,16 +41,16 @@ export class WunderlistApi {
         window.localStorage.setItem(localStorageKey, value);
     }
 
-    public getLists(): Promise<defs.TaskList[]> {
-        return this.get<defs.TaskList[]>("lists");
+    public getLists(): Promise<defs.ApiTaskList[]> {
+        return this.get<defs.ApiTaskList[]>("lists");
     }
 
-    public getTasks(listId: number) {
-        return this.get<defs.Task[]>("tasks", { list_id: listId });
+    public getTasks(listId: number) : Promise<defs.ApiTask[]> {
+        return this.get<defs.ApiTask[]>("tasks", { list_id: listId });
     }
 
-    public getCompletedTasks(listId: number) {
-        return this.get<defs.Task[]>("tasks", { list_id: listId, completed: true });
+    public getCompletedTasks(listId: number) : Promise<defs.ApiTask[]> {
+        return this.get<defs.ApiTask[]>("tasks", { list_id: listId, completed: true });
     }
 
     private get<T>(resource: string, params?: Object): Promise<T> {
